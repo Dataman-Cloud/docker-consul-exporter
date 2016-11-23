@@ -4,7 +4,7 @@ MAINTAINER pro zpang@dataman-inc.com
 ENV CONSUL_EXPORTER_VERSION=0.2.0
 ENV CONSUL_EXPORTER_PKG_NAME=consul_exporter-${CONSUL_EXPORTER_VERSION}.linux-amd64.tar.gz
 
-RUN wget -O /tmp/$CONSUL_EXPORTER_PKG_NAME https://github.com/prometheus/consul_exporter/releases/download/v$CONSUL_EXPORTER_VERSION/$CONSUL_EXPORTER_PKG_NAME && \
+RUN wget -O /tmp/$CONSUL_EXPORTER_PKG_NAME https://github.com/prometheus/consul_exporter/releases/download/$CONSUL_EXPORTER_VERSION/$CONSUL_EXPORTER_PKG_NAME && \
 	    tar xzvf /tmp/$CONSUL_EXPORTER_PKG_NAME -C /
 
-ENTRYPOINT ["/prometheus-0.2.0.linux-amd64/consul_exporter"]
+ENTRYPOINT ["/consul_exporter"]
